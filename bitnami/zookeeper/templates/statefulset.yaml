@@ -131,6 +131,8 @@ spec:
           value: {{ .Values.heapSize | quote }}
         - name: ZOO_LOG_LEVEL
           value: {{ .Values.logLevel | quote }}
+        - name: ZOO_AUTOPURGE_PURGEINTERVAL
+          value: {{ .Values.purgeInterval | quote }}
         - name: ALLOW_ANONYMOUS_LOGIN
           value: {{ ternary "yes" "no" .Values.allowAnonymousLogin | quote }}
         {{- if .Values.jvmFlags }}
